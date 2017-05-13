@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/johnfliu818/handbrake-utils/issues"
   },
-  "homepage": "https://github.com/johnfliu818/handbrake-utils#readme"
+  "homepage": "https://github.com/johnfliu818/handbrake-utils#readme",
+  "dependencies": {
+    "bluebird": "^3.5.0"
+  }
 }
