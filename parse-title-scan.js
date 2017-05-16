@@ -24,7 +24,7 @@ function parseIndentTree(lines, spacesPerIdent) {
     let node = {text: matches[2], children: []}
     if (level + 1 > nodestack.length) throw new Error("parse error, jumping up indentation")
     nodestack = nodestack.slice(0, level + 1)
-    let parent = nodestack[nodestack.length-1]
+    let parent = nodestack[nodestack.length - 1]
     parent.children.push(node)
     nodestack.push(node)
   })
@@ -75,7 +75,7 @@ function parseTitles(titleNodes) {
     result.titleNo = parseInt(node.text.slice(2).match(/title (.+)/)[1])
     node.children.forEach(child => {
       let childText = child.text.slice(2)
-      if (childText == 'Main Feature') {
+      if (childText === 'Main Feature') {
         result.mainFeature = true
         return
       }
@@ -104,7 +104,7 @@ function parseTitles(titleNodes) {
         result.subtitleTracks = parseSubtitleTracks(child.children)
         return
       }
-      keyval = getKeyVal(childText)
+      let keyval = getKeyVal(childText)
       if (keyval.val.length === 0) throw new Error("No value parsed")
       result[keyval.key] = keyval.val
     })
