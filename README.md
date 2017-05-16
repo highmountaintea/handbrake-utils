@@ -12,16 +12,16 @@ For example, Handbrake title scan output is in text format, which is software un
 
 Simply import the module and call the appropriate function
 
-...
+~~~~
 const fs = require("fs")
-const handbrakeUtils = require('./index.js')
+const handbrakeUtils = require('handbrake-utils')
 
 // assume titlescan.txt contains the output of handbrake -t 0
 fs.readFile("titlescan.txt", 'utf8', function(err, text) {
   let titles = handbrakeUtils.parseTitleScan(text)
   console.log(titles)
 })
-...
+~~~~
 
 
 ## Documentation
